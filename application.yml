@@ -1,0 +1,16 @@
+app:
+  name: Base clients
+
+server:
+  servlet:
+    context-path: /api/v1/customers
+
+storage:
+  incoming-exports:
+    path: //nas-corp/clients/incoming
+    written-by-application: Paiements
+
+callers:
+  - Portail client
+  - API Gateway
+  - Service commandes
