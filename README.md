@@ -1,15 +1,15 @@
 # Regulatory (fixture)
 
-Regulatory reporting. Ingests transaction reports produced when a trade is booked.
+Regulatory reporting. Receives the instrument master from DataHub.
 
 ## Integrations (topology)
 
-- Listens on AMQP queue `regulatory.reports` published by **Booking**.
+- Exposes `/api/v1/instruments` called by **DataHub**.
 
 ## Data transiting on flows (Data Model fixture)
 
 | Source | Kind | data_category |
 |--------|------|---------------|
-| Booking | MQ (inbound) | `REGULATORY_REPORT` |
+| DataHub | API (inbound) | `INSTRUMENT_REFERENCE` |
 
 See `TransitDataTypes.java` and `application.yml`.

@@ -2,12 +2,10 @@ app:
   name: Regulatory
   flow-enrichment:
     data-category-field: data_category
-
-spring:
-  rabbitmq:
-    listener:
-      queues: regulatory.reports
-      produced-by-application: Booking
-      message:
-        data-category: REGULATORY_REPORT
-        payload-format: JSON
+  api:
+    instruments:
+      path: /api/v1/instruments
+      data-category: INSTRUMENT_REFERENCE
+      called-by-application: DataHub
+  callers:
+    - DataHub

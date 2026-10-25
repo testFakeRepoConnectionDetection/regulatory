@@ -1,15 +1,16 @@
 package fixture;
 
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Inbound regulatory reports from Booking.
+ * Inbound instrument reference data from DataHub.
  *
- * <p>data_category: REGULATORY_REPORT (MQ).
+ * <p>data_category: INSTRUMENT_REFERENCE (API).
  */
+@RestController
+@RequestMapping("/api/v1/instruments")
 public class IntegrationHints {
 
-  /** data_category REGULATORY_REPORT — produced by Booking */
-  @RabbitListener(queues = "regulatory.reports")
-  public void onRegulatoryReport(String payload) {}
+  // POST /api/v1/instruments from DataHub — data_category INSTRUMENT_REFERENCE
 }
