@@ -1,5 +1,7 @@
 # Regulatory (fixture)
 
+Business function: `REGULATORY_REPORTING` (`app.business_function`).
+
 Regulatory reporting. Receives the instrument master from DataHub.
 
 ## Integrations (topology)

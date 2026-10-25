@@ -1,5 +1,6 @@
 app:
   name: Regulatory
+  business_function: REGULATORY_REPORTING
   flow-enrichment:
     data-category-field: data_category
   api:
