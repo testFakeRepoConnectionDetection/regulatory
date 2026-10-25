@@ -1,18 +1,15 @@
 package fixture;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 
 /**
- * Inbound API for Portail client, API Gateway, Service commandes. NAS import from Paiements.
+ * Inbound regulatory reports from Booking.
  *
- * <p>Inbound data_category: CUSTOMER_PROFILE, CUSTOMER_LOOKUP, CUSTOMER_REFERENTIAL,
- * SETTLEMENT_EXPORT (NAS).
+ * <p>data_category: REGULATORY_REPORT (MQ).
  */
-@RestController
-@RequestMapping("/api/v1/customers")
 public class IntegrationHints {
 
-  // Referential read API — data_category per caller in application.yml
-  // NAS //nas-corp/clients/incoming — SETTLEMENT_EXPORT from Paiements (CSV)
+  /** data_category REGULATORY_REPORT — produced by Booking */
+  @RabbitListener(queues = "regulatory.reports")
+  public void onRegulatoryReport(String payload) {}
 }

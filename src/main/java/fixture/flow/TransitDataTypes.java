@@ -1,14 +1,11 @@
 package fixture.flow;
 
-/** Data categories exposed or ingested by Base clients. */
+/** Data categories ingested by Regulatory. */
 public final class TransitDataTypes {
 
-  public static final String API_CUSTOMERS = "CUSTOMER_PROFILE";
-  public static final String API_LOOKUP = "CUSTOMER_LOOKUP";
-  public static final String API_REFERENTIAL = "CUSTOMER_REFERENTIAL";
-  public static final String NAS_SETTLEMENT = "SETTLEMENT_EXPORT";
+  public static final String MQ_REGULATORY_REPORT = "REGULATORY_REPORT";
 
-  public static final String NAS_PAYLOAD_FORMAT = "CSV";
+  public static final String MQ_PAYLOAD_FORMAT = "JSON";
 
   private TransitDataTypes() {}
 }

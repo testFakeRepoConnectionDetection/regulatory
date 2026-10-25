@@ -1,28 +1,13 @@
 app:
-  name: Base clients
+  name: Regulatory
   flow-enrichment:
     data-category-field: data_category
 
-server:
-  servlet:
-    context-path: /api/v1/customers
-
-api:
-  customers:
-    data-category: CUSTOMER_PROFILE
-  lookup:
-    data-category: CUSTOMER_LOOKUP
-  referential:
-    data-category: CUSTOMER_REFERENTIAL
-
-storage:
-  incoming-exports:
-    path: //nas-corp/clients/incoming
-    written-by-application: Paiements
-    data-category: SETTLEMENT_EXPORT
-    payload-format: CSV
-
-callers:
-  - Portail client
-  - API Gateway
-  - Service commandes
+spring:
+  rabbitmq:
+    listener:
+      queues: regulatory.reports
+      produced-by-application: Booking
+      message:
+        data-category: REGULATORY_REPORT
+        payload-format: JSON
