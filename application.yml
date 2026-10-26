@@ -1,6 +1,7 @@
 app:
   name: Regulatory
   business_function: REGULATORY_REPORTING
+  pillar: "Booking & PNL & REG"
   flow-enrichment:
     data-category-field: data_category
   api:

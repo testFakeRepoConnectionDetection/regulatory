@@ -1,6 +1,7 @@
 # Regulatory (fixture)
 
 Business function: `REGULATORY_REPORTING` (`app.business_function`).
+Pillar: `Booking & PNL & REG` (`app.pillar`).
 
 Regulatory reporting. Receives the instrument master from DataHub.
 
