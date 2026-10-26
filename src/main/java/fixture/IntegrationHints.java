@@ -4,13 +4,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Inbound instrument reference data from DataHub.
+ * Inbound trade from DataHub.
  *
- * <p>data_category: INSTRUMENT_REFERENCE (API).
+ * <p>Edge fields: data trade, frequency daily.
  */
 @RestController
-@RequestMapping("/api/v1/instruments")
+@RequestMapping("/api/v1/trades")
 public class IntegrationHints {
 
-  // POST /api/v1/instruments from DataHub — data_category INSTRUMENT_REFERENCE
+  // POST /api/v1/trades from DataHub — data trade, frequency daily
 }

@@ -3,16 +3,16 @@
 Business function: `REGULATORY_REPORTING` (`app.business_function`).
 Pillar: `Booking & PNL & REG` (`app.pillar`).
 
-Regulatory reporting. Receives the instrument master from DataHub.
+Regulatory reporting.
 
 ## Integrations (topology)
 
-- Exposes `/api/v1/instruments` called by **DataHub**.
+- Exposes `/api/v1/trades` called by **DataHub**.
 
 ## Data transiting on flows (Data Model fixture)
 
-| Source | Kind | data_category |
-|--------|------|---------------|
-| DataHub | API (inbound) | `INSTRUMENT_REFERENCE` |
+| Source | Kind | Channel | data | frequency |
+|--------|------|---------|------|-----------|
+| DataHub | API (inbound) | /api/v1/trades | `trade` | `daily` |
 
-See `TransitDataTypes.java` and `application.yml`.
+See `TransitDataTypes.java` and `application.yml` (`data`, `frequency`).
